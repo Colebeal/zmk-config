@@ -2,7 +2,22 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:raw.githubusercontent.com)",
-      "Bash(gh auth *)"
+      "Bash(gh auth *)",
+      "Bash(cp -X /tmp/firmware/corne_left-nice_nano_v2-zmk.uf2 /Volumes/BS_KBD/)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(system_profiler SPUSBDataType)",
+      "Bash(ioreg -p IOUSB -l)",
+      "Bash(ioreg -p IOUSB -w 0)",
+      "Bash(ioreg -p IOUSB -w 0 -l -n \"HID Device@01160000\")",
+      "Bash(hidutil list *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(gh run *)",
+      "Bash(ioreg -r -d 2 -n \"HID Device@01160000\" -w 0)",
+      "WebFetch(domain:boardsource.xyz)",
+      "Bash(gh api *)",
+      "Bash(python3 -c \"import sys,json; [print\\(f['path']\\) for f in json.load\\(sys.stdin\\)]\")"
     ]
   }
 }
